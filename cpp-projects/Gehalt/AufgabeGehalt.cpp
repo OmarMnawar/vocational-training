@@ -19,7 +19,7 @@ int main() {
 
 	const double arbeitgeberTeil = 2;
 
-	int endProgramm = 1;
+	char endProgramm = 'n';
 
 	do
 	{
@@ -52,5 +52,5 @@ int main() {
 		cout << "Geben Sie bitte die Nummer 1, um das Programm zu beenden: ";
 		cin >> endProgramm;
 
-	} while (endProgramm != 1);
+	} while (endProgramm != 'n' && endProgramm != 'N');
 }

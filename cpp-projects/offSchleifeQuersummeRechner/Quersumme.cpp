@@ -8,9 +8,9 @@ using namespace std;
 int main() {
     int zahl = 1;
     double quersumme = 0;
-    int endProgram = 1;
+    char endProgram = 'y';
 
-    while (endProgram >= 1) {
+    while (endProgram != 'n' && endProgram != 'N') {
         cout << "Bitte geben Sie ein Zahl ein, um seiner Quersumme zu berechnen." << endl;
         cout << "Zahl: ";
         cin >> zahl;
@@ -25,13 +25,11 @@ int main() {
         quersumme = 0;
 
         cout << endl;
-        cout << "Wollen Sie nochmal ein Quersumme berechnen?\nGeben Sie die:\nNummer 1 für ja\nNummer 0 für Nein" <<
-                endl;
+        cout << "Wollen Sie das Programm beenden?\nGeben <n/N> ein." << endl;
         cout << "Antwort: ";
         cin >> endProgram;
         cout << endl;
     }
-
 
     return 0;
 }

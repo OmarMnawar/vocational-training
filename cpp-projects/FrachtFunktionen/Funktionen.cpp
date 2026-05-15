@@ -16,7 +16,7 @@ int main()
 	int angegebnenZahl = 1;
 	int angegebnenFakultaet = 1;
 
-	int endProgramm = 0;
+	char endProgramm = 'n';
 
 	do
 	{
@@ -37,10 +37,10 @@ int main()
 		cin >> angegebnenFakultaet;
 		cout << Fakultaet(angegebnenFakultaet) << endl;
 
-		cout << "Um das Programm zu beenden\nGeben Sie bitte die Nummer 1. " << endl;
+		cout << "Um das Programm zu beenden\nGeben sie bitte <n/N> ein: " << endl;
 		cin >> endProgramm;
 	}
-	while (endProgramm != 1);
+	while (endProgramm != 'n' && endProgramm != 'N');
 
 	return 0;
 }

@@ -1,0 +1,27 @@
+# Compiled Object files
+*.slo
+*.lo
+*.o
+*.obj
+
+# Compiled Dynamic libraries
+*.so
+*.dylib
+*.dll
+
+# Compiled Executables (Die Programme selbst)
+*.exe
+*.out
+*.app
+
+# IDE spezifische Ordner (Visual Studio / VS Code)
+.vscode/
+.vs/
+bin/
+obj/
+out/
+build/
+
+# Betriebssystem-Dateien
+.DS_Store
+Thumbs.db

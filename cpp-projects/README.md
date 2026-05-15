@@ -20,7 +20,7 @@ To keep the repository organized and professional, I follow these internal rules
 
 1. **Author Identification:** Every file starts with my name as a header.
     ```cpp
-    /* ==== Alex Harper ==== */
+    /* ==== Omar Mnawar ==== */
 
 2. **Exercise Identification:** The main goal or task number is mentioned at the top.
     ```cpp

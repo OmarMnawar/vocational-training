@@ -21,12 +21,12 @@ To keep the repository organized and professional, I follow these internal rules
 1. **Author Identification:** Every file starts with my name as a header.
     ```cpp
     /* ==== Alex Harper ==== */
-    
-2. **Exercise Identification: The main goal or task number is mentioned at the top.
+
+2. **Exercise Identification:** The main goal or task number is mentioned at the top.
     ```cpp
     /* ==== Task 4.5 ==== */
     
-4. **Multiple Tasks:** If a single file contains solutions for multiple sub-tasks, each section is clearly marked when it begins.
+3. **Multiple Tasks:** If a single file contains solutions for multiple sub-tasks, each section is clearly marked when it begins.
     ```cpp
     // Start of Task 4.5.1
     ... code ...

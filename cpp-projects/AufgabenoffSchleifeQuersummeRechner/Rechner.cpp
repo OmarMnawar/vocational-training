@@ -1,5 +1,5 @@
-/* Omar Mnawar 21.02.2026 */
-// Aufgabe Rechner.
+/* ==== Omar Mnawar 21.02.2026 ==== */
+/* ==== Aufgabe Rechner. ========== */
 #include <iostream>
 
 using namespace std;

@@ -1,5 +1,5 @@
-/* Omar Mnawar 21.02.2026 */
-// Aufgabe Quersumme
+/* ==== Omar Mnawar 21.02.2026 ==== */
+/* ==== Aufgabe Quersumme ========= */
 
 #include <iostream>
 

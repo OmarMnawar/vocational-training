@@ -3,20 +3,10 @@
 
 #include <iostream>
 #include <iomanip>
+#include "../Angebotskalkulation/Headers/Eingaben.h"
+#include "../Angebotskalkulation/Headers/Kalkulation.h"
 using namespace std;
 
-double prozentwert(double wert, double wunschProzent, double prozent);
-
-double prozentwert(double wert, double wunschProzent, double prozent = 100)
-{
-    if (wert <= 0 || wunschProzent <= 0)
-        return 0;
-
-    if (prozent <= 0)
-        prozent = 100;
-
-    return  (wert * wunschProzent) / prozent;
-}
 
 int main()
 {
@@ -34,24 +24,37 @@ int main()
     cout << "Kalkulation Version 1.0" << endl;
 
     do {
-        cout << "Bitte den Listenpreis eingeben: ";
-        cin >> listenPreis;
-        cout << "Lieferrabatt eingeben: ";
-        cin >> lieferrabatt;
-        cout << "Lieferskonto eingeben: ";
-        cin >> lieferskonto;
-        cout << "Bezugskosten eingeben: ";
-        cin >> bezugskonto;
+        do {
+            cout << "Bitte den Listenpreis eingeben: ";
+        } while (EingabenLesen(listenPreis) == 1);
+
+        do {
+            cout << "Lieferrabatt eingeben: ";
+        } while (EingabenLesen(lieferrabatt) == 1);
+
+        do {
+            cout << "Lieferskonto eingeben: ";
+        } while (EingabenLesen(lieferskonto) == 1);
+
+        do {
+            cout << "Bezugskosten eingeben: ";
+        } while (EingabenLesen(bezugskonto) == 1);
+
+        do {
         cout << "Gemeinkostenzuschlag eingeben: ";
-        cin >> gemeinkostenzuschlag;
-        cout << "Gewinnzuschlag eingeben: ";
-        cin >> gewinnzuschlag;
-        cout << "Kundenskonto eingeben: ";
-        cin >> kundenskonto;
-        cout << "Kundenrabatt eingeben: ";
-        cin >> kundenrabatt;
+        } while (EingabenLesen(gemeinkostenzuschlag) == 1);
 
+        do {
+            cout << "Gewinnzuschlag eingeben: ";
+        } while (EingabenLesen(gewinnzuschlag) == 1);
 
+        do {
+            cout << "Kundenskonto eingeben: ";
+        } while (EingabenLesen(kundenskonto) == 1);
+
+        do {
+            cout << "Kundenrabatt eingeben: ";
+        } while (EingabenLesen(kundenrabatt) == 1);
 
         cout << endl;
         cout << "Hier ist die Kalkulation: " << endl;

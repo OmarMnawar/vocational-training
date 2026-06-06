@@ -80,3 +80,4 @@ add_executable(Zeichnenkette "First Year/Zeichnenkette/ZeichnenKette.cpp")
 add_executable(zinseszins "First Year/Zinseszins/Zinseszins.cpp")
 
 # Klausuren
+add_executable(ErsteKlausur "First Year/Klausuren/Erste Klausur/ersteKlausur.cpp")

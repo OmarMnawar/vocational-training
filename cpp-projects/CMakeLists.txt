@@ -83,6 +83,7 @@ add_executable(zinseszins "First Year/Zinseszins/Zinseszins.cpp")
 add_executable(ErsteKlausur "First Year/Klausuren/Erste Klausur/ersteKlausur.cpp")
 add_executable(ErsteKlausurLoesung "First Year/Klausuren/Erste Klausur/ersteKlausurLoesung.cpp")
 add_executable(ZweiteKlausur "First Year/Klausuren/Zweite Klausur/zweiteKlausur.cpp")
+add_executable(ZweiteKlausurLoesung "First Year/Klausuren/Zweite Klausur/zweiteKlausurLoesung.cpp")
 add_executable(ZweiteKlausur_SummeRekursion "First Year/Klausuren/Zweite Klausur/SummeRekursion.cpp")
 add_executable(ZweiteKlausur_QuersummeRekursion
         "First Year/Klausuren/Zweite Klausur/QuersummeRekursion.cpp"

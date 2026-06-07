@@ -88,3 +88,7 @@ add_executable(ZweiteKlausur_QuersummeRekursion
         "First Year/Klausuren/Zweite Klausur/QuersummeRekursion.cpp"
         "First Year/Klausuren/Zweite Klausur/Quersumme.cpp"
 )
+add_executable(ZweiteKlausur_QuersummeRekursionLoesung
+        "First Year/Klausuren/Zweite Klausur/QuersummeRekursionLoesung.cpp"
+        "First Year/Klausuren/Zweite Klausur/QuersummeLoesung.cpp"
+)

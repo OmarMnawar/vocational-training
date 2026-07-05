@@ -95,4 +95,5 @@ add_executable(ZweiteKlausur_QuersummeRekursionLoesung
 )
 
 # Project 26 Zeiger und Dynamisches Arrays
-add_executable(Zeiger "First Year/Zeiger Und DynamischesArrays/Zeiger.cpp")
+add_executable(Zeiger "First Year/Zeiger Und DynamischeArrays/Zeiger.cpp")
+add_executable(DynamischeArray "First Year/Zeiger Und DynamischeArrays/DynamischeArray.cpp")

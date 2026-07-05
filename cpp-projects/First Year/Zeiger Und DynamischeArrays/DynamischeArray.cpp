@@ -7,6 +7,7 @@
 using namespace std;
 
 void alphabetSortierung(char** array, int arrayGrosse);
+void alphabetSortierungTeilZwei(char** nachname, char** vorname, int arrayGrosse);
 bool kommtDanach(char* name1, char* name2);
 char meinTolower(char c);
 void teilEins();
@@ -53,6 +54,26 @@ void alphabetSortierung(char** array, int arrayGrosse)
 				char* temp = array[j];
 				array[j] = array[j + 1];
 				array[j + 1] = temp;
+			}
+		}
+	}
+}
+
+void alphabetSortierungTeilZwei(char** nachname, char** vorname, int arrayGrosse)
+{
+	for (int i = 0; i < arrayGrosse - 1; i++)
+	{
+		for (int j = 0; j < arrayGrosse - 1; j++)
+		{
+			if (kommtDanach(nachname[j], nachname[j + 1]))
+			{
+				char* tempNachname = nachname[j];
+				nachname[j] = nachname[j + 1];
+				nachname[j + 1] = tempNachname;
+				
+				char* tempVorname = vorname[j];
+				vorname[j] = vorname[j + 1];
+				vorname[j + 1] = tempVorname;
 			}
 		}
 	}
@@ -115,6 +136,66 @@ void teilEins()
 
 void teilZwei()
 {
+	char antwort = 'n';
+	
+	cout << "Möchten Sie mit dem zweiten Teil der Aufgabe starten?\nGeben Sie dann bitte <J/j> ein: ";
+	cin >> antwort;
+
+	if (antwort != 'J' && antwort != 'j')
+	{
+		return;
+	}
+
+	cout << "\n\n\n\n\n\n\n\n==================\n";
+
+	int schueleranzahl = 30;
+	char** pNachnameArray;
+	char** pVornameArray;
+
+	cout << "Wie viele Schlüler gibt es? " << endl;
+	cout << "Antwort: ";
+	cin >> schueleranzahl;
+
+	pNachnameArray = new char* [schueleranzahl];
+	pVornameArray = new char* [schueleranzahl];
+
+	for (int i = 0; i < schueleranzahl; i++)
+	{
+		pNachnameArray[i] = new char[30];
+		pVornameArray[i] = new char[30];
+		cin >> pNachnameArray[i];
+		cin >> pVornameArray[i];
+	}
+	
+	cout << endl << "==================" << endl;
+
+	cout << "Unsortierte Liste:" << endl;
+
+	cout << "==================" << endl;
+
+	for (int i = 0; i < schueleranzahl; i++)
+	{
+		cout << pNachnameArray[i] << ", " << pVornameArray[i] << endl;
+	}
+
+
+	cout << endl << "==================" << endl;	
+	cout << "Sortierte Liste:" << endl;
+	cout << "==================" << endl;
+	alphabetSortierungTeilZwei(pNachnameArray, pVornameArray, schueleranzahl);
+
+
+	
+	for (int i = 0; i < schueleranzahl; i++)
+	{
+		cout << pNachnameArray[i] << ", " << pVornameArray[i] << endl;
+		delete[] pNachnameArray[i];
+		delete[] pVornameArray[i];
+	}
+	
+	delete[] pNachnameArray;
+	delete[] pVornameArray;
+	cout << "==================" << endl;
 
 }
 
@@ -123,6 +204,5 @@ void teilZwei()
 int main()
 {
 	teilEins();
-	//teilZwei();
-
+	teilZwei();
 }

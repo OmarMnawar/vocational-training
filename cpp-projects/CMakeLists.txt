@@ -74,7 +74,7 @@ add_executable(Umsatzzuwachstum_Versicherungsvertreter "First Year/Umsatzzuwachs
 add_executable(Wetter "First Year/Wetter/Wetter.cpp")
 
 # Project 24: Zeichnenkette
-add_executable(Zeichnenkette "First Year/Zeichnenkette/ZeichnenKette.cpp")
+add_executable(Zeichnenkette "First Year/Zeichnenkette/Zeichnenkette.cpp")
 
 # Project 25: Zinseszins
 add_executable(zinseszins "First Year/Zinseszins/Zinseszins.cpp")
@@ -93,3 +93,7 @@ add_executable(ZweiteKlausur_QuersummeRekursionLoesung
         "First Year/Klausuren/Zweite Klausur/QuersummeRekursionLoesung.cpp"
         "First Year/Klausuren/Zweite Klausur/QuersummeLoesung.cpp"
 )
+
+# Project 26 Zeiger und Dynamisches Arrays
+add_executable(Zeiger "First Year/Zeiger Und DynamischeArrays/Zeiger.cpp")
+add_executable(DynamischeArray "First Year/Zeiger Und DynamischeArrays/DynamischeArray.cpp")

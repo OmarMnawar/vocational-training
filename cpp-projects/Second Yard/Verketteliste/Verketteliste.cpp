@@ -17,79 +17,91 @@ struct Address {
 };
 
 
-Address *pArrayAddress;
-int addressArraySize = 0;
+Address *pHeadAddress;
+int addressCount = 0;
 
 void WriteAddresse();
 void ReadAddresse();
-bool HasNoAddresses();
 
 void WriteAddresse() {
 
-  cout << "Wie viele Adresse moechte Sie anlegen?\n";
-  cout << "Anzahl: "; 
-  cin >> addressArraySize;
+  char answer = 'j';
+  int layedAdresses = 0;
 
-  pArrayAddress = new Address[addressArraySize];
+  do {
 
-  cout << "\n=========\n" << endl;
-
-  for (int i = 0; i < addressArraySize; i++) {
-    cout << "Adressnummer " << i + 1 << " :" << endl;
+    Address *newAddress = new Address();
+    cout << "\n=========\n" << endl;
+    cout << "Neue Adress:" << endl;
     cout << "Nachname: ";
-    cin >> pArrayAddress[i].lastname;
+    cin >> newAddress->lastname;
     cout << "Strasse: ";
-    cin >> pArrayAddress[i].street;
+    cin >> newAddress->street;
     cout << "Hausnummer: ";
-    cin >> pArrayAddress[i].housenr;
+    cin >> newAddress->housenr;
     cout << "PLZ: ";
-    cin >> pArrayAddress[i].postcode;
+    cin >> newAddress->postcode;
     cout << "Stadt: ";
-    cin >> pArrayAddress[i].city;
+    cin >> newAddress->city;
     cout << "Land: ";
-    cin >> pArrayAddress[i].country;
+    cin >> newAddress->country;
 
-    if ((i - 1) < addressArraySize) {
-      pArrayAddress[i].lastAddress = NULL;
+    if (pHeadAddress == nullptr) {
+      pHeadAddress = newAddress;
     } else {
-      pArrayAddress[i].lastAddress = &pArrayAddress[i - 1];
+      Address *current = pHeadAddress;
+      while (current->nextAddress != nullptr) {
+        current = current->nextAddress;
+      }
+      
+      current->nextAddress = newAddress;
+      newAddress->lastAddress = current;
     }
+    layedAdresses++;
+    addressCount++;
 
-    if ((i + 1) > addressArraySize) {
-      pArrayAddress[i].nextAddress = NULL;
-    } else {
-      pArrayAddress[i].nextAddress = &pArrayAddress[i + 1];
-    }
-  }
+    cout << "Neu Angelegten Adressen: " << layedAdresses << endl;
+    cout << "Adressen insgesamt: " << addressCount << endl;
+
+    cout << "Möchten Sie weitere Addressen anlegen <j/n>?";
+    cin >> answer;
+    tolower(answer);
+  } while (answer == 'j');
 }
 
 
 void ReadAddresse() {
 
-  int count = 0;
+  if (pHeadAddress != nullptr) 
+  {
+    Address *current = pHeadAddress;
 
-  if (HasNoAddresses() == false) {
-    for (int i = 0; i < addressArraySize; i++) {
-      cout << "\n========\n" << endl;
-      cout << "Adressnummer " << i + 1 << " :" << endl;
-      cout << "Nachname: \t" << pArrayAddress[i].lastname << endl;
-      cout << "Strasse: \t" << pArrayAddress[i].street << endl;
-      cout << "Hausnummer: \t" << pArrayAddress[i].housenr << endl;
-      cout << "PLZ: \t\t" << pArrayAddress[i].postcode << endl;
-      cout << "Stadt: \t\t" << pArrayAddress[i].city << endl;
-      cout << "Land: \t\t" << pArrayAddress[i].country << endl;
-      count++;
+    int count = 0;
+
+      while (current->nextAddress != nullptr) 
+      {
+        cout << "\n========\n" << endl;
+        cout << "Adressnummer " << count << " :" << endl;
+        cout << "Nachname: \t" << &current->lastname << endl;
+        cout << "Strasse: \t" << &current->street << endl;
+        cout << "Hausnummer: \t" << &current->housenr << endl;
+        cout << "PLZ: \t\t" << &current->postcode << endl;
+        cout << "Stadt: \t\t" << &current->city << endl;
+        cout << "Land: \t\t" << &current->country << endl;
+        current = current->nextAddress;
+        count++;
     }
   }
     
   cout << "===== Ende der Addressen =====" << endl;
-  cout << "Adressen insgesamt: " << count << endl;
+  cout << "Adressen insgesamt: " << addressCount << endl;
 }
 
 void DeleteAdress()
 {
+  /*
   char lastname[50 + 1] = {}; 
-  cout << "Geben sie den Nachnamen der Adresse ein die sie löschen möchten: ";
+  cout << "Geben sie den Nachnamen der Adresse ein die sie löschen möchten" << endl;
   cin >> lastname;
 
   for(int i = 0; i < addressArraySize; i++)
@@ -105,27 +117,19 @@ void DeleteAdress()
       if((i + 1) > addressArraySize)
       {
         pArrayAddress[i - 1].nextAddress = NULL;
-      }
-      delete [i] pArrayAddress;
+      }     
+      delete &pArrayAddress[i];
     }
-  }
-}
-bool HasNoAddresses() {
-  if (addressArraySize < 1) {
-    return true;
-  } else {
-    return false;
-  }
+  } */
 }
 
 int main() {
-
-  char decision;
-  int choice;
   SetConsoleOutputCP(CP_UTF8);
   SetConsoleCP(CP_UTF8);
-
-
+  char decision;
+  int choice;
+  pHeadAddress = new Address();
+  
   do
   {
     system("cls");
@@ -162,8 +166,6 @@ int main() {
     tolower(decision);
 
   }while(decision == 'j');
-  
-  delete pArrayAddress;
   
   return 0;
 }

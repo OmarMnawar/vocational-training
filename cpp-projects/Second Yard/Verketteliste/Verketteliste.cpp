@@ -68,6 +68,30 @@ void ReadAddresse() {
   cout << "Adressen insgesamt: \t " << count;
 }
 
+void DeleteAdress()
+{
+  char lastname[50 + 1] = {}; 
+  cout << "Geben sie den Nachnamen der Adresse ein die sie löschen möchten" << endl;
+  cin >> lastname;
+
+  for(int i = 0; i < addressArraySize; i++)
+  {
+    if(strcmp(pArrayAddress.lastname == lastname))
+    {
+      pArrayAddress[i + 1].lastAddress = pArrayAddress[i - 1];
+      if(pArrayAddress[i - 1] < addressArraySize)
+      {
+        pArrayAddress[i + 1].lastAddress = null;
+      }
+      pArrayAddress[i - 1].nextAddress = pArrayAddress[i + 1]; 
+      if(pArrayAddress[i + 1] > addressArraySize)
+      {
+        pArrayAddress[i - 1].nextAddress = null;
+      }     
+      delete pArrayAddress[i];
+    }
+  }
+}
 bool HasNoAddresses() {
   if (addressArraySize < 1) {
     return true;
@@ -79,7 +103,7 @@ bool HasNoAddresses() {
 int main() {
 
   char decision;
-  char choice;
+  int choice;
 
   do
   {
@@ -101,6 +125,7 @@ int main() {
       break;
 
       case 3:
+      DeleteAdress();
       break;
 
       case 4:

@@ -78,16 +78,16 @@ void ReadAddresse() {
 
     int count = 0;
 
-      while (current->nextAddress != nullptr) 
+      while (count < addressCount) 
       {
         cout << "\n========\n" << endl;
-        cout << "Adressnummer " << count << " :" << endl;
-        cout << "Nachname: \t" << &current->lastname << endl;
-        cout << "Strasse: \t" << &current->street << endl;
-        cout << "Hausnummer: \t" << &current->housenr << endl;
-        cout << "PLZ: \t\t" << &current->postcode << endl;
-        cout << "Stadt: \t\t" << &current->city << endl;
-        cout << "Land: \t\t" << &current->country << endl;
+        cout << "Adressnummer " << count + 1 << " :" << endl;
+        cout << "Nachname: \t" << current->lastname << endl;
+        cout << "Strasse: \t" << current->street << endl;
+        cout << "Hausnummer: \t" << current->housenr << endl;
+        cout << "PLZ: \t\t" << current->postcode << endl;
+        cout << "Stadt: \t\t" << current->city << endl;
+        cout << "Land: \t\t" << current->country << endl;
         current = current->nextAddress;
         count++;
     }
@@ -128,7 +128,6 @@ int main() {
   SetConsoleCP(CP_UTF8);
   char decision;
   int choice;
-  pHeadAddress = new Address();
   
   do
   {

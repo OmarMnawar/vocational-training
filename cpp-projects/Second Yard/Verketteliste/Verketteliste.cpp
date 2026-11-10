@@ -44,6 +44,18 @@ void WriteAddresse() {
     cin >> pArrayAddress[i].city;
     cout << "Land: ";
     cin >> pArrayAddress[i].country;
+
+    if ((i - 1) < addressArraySize) {
+      pArrayAddress[i].lastAddress = NULL;
+    } else {
+      pArrayAddress[i].lastAddress = &pArrayAddress[i - 1];
+    }
+
+    if ((i + 1) > addressArraySize) {
+      pArrayAddress[i].nextAddress = NULL;
+    } else {
+      pArrayAddress[i].nextAddress = &pArrayAddress[i + 1];
+    }
   }
 }
 
@@ -76,19 +88,19 @@ void DeleteAdress()
 
   for(int i = 0; i < addressArraySize; i++)
   {
-    if(strcmp(pArrayAddress.lastname == lastname))
+    if(strcmp(pArrayAddress[i].lastname, lastname))
     {
-      pArrayAddress[i + 1].lastAddress = pArrayAddress[i - 1];
-      if(pArrayAddress[i - 1] < addressArraySize)
+      pArrayAddress[i + 1].lastAddress = &pArrayAddress[i - 1];
+      if((i - 1) < addressArraySize)
       {
-        pArrayAddress[i + 1].lastAddress = null;
+        pArrayAddress[i + 1].lastAddress = NULL;
       }
-      pArrayAddress[i - 1].nextAddress = pArrayAddress[i + 1]; 
-      if(pArrayAddress[i + 1] > addressArraySize)
+      pArrayAddress[i - 1].nextAddress = &pArrayAddress[i + 1]; 
+      if((i + 1) > addressArraySize)
       {
-        pArrayAddress[i - 1].nextAddress = null;
+        pArrayAddress[i - 1].nextAddress = NULL;
       }     
-      delete pArrayAddress[i];
+      delete &pArrayAddress[i];
     }
   }
 }

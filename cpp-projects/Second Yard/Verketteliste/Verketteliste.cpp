@@ -1,5 +1,6 @@
 #include <stdio.h> 
 #include <iostream>
+#include <Windows.h>
 
 using namespace std;
 
@@ -26,12 +27,15 @@ bool HasNoAddresses();
 void WriteAddresse() {
 
   cout << "Wie viele Adresse moechte Sie anlegen?\n";
-  cout << "Anzahl: ";
+  cout << "Anzahl: "; 
   cin >> addressArraySize;
 
   pArrayAddress = new Address[addressArraySize];
 
+  cout << "\n=========\n" << endl;
+
   for (int i = 0; i < addressArraySize; i++) {
+    cout << "Adressnummer " << i + 1 << " :" << endl;
     cout << "Nachname: ";
     cin >> pArrayAddress[i].lastname;
     cout << "Strasse: ";
@@ -66,24 +70,26 @@ void ReadAddresse() {
 
   if (HasNoAddresses() == false) {
     for (int i = 0; i < addressArraySize; i++) {
+      cout << "\n========\n" << endl;
+      cout << "Adressnummer " << i + 1 << " :" << endl;
       cout << "Nachname: \t" << pArrayAddress[i].lastname << endl;
       cout << "Strasse: \t" << pArrayAddress[i].street << endl;
       cout << "Hausnummer: \t" << pArrayAddress[i].housenr << endl;
-      cout << "PLZ: \t" << pArrayAddress[i].postcode << endl;
-      cout << "Stadt: \t" << pArrayAddress[i].city << endl;
-      cout << "Land: \t" << pArrayAddress[i].country << endl;
+      cout << "PLZ: \t\t" << pArrayAddress[i].postcode << endl;
+      cout << "Stadt: \t\t" << pArrayAddress[i].city << endl;
+      cout << "Land: \t\t" << pArrayAddress[i].country << endl;
       count++;
     }
   }
     
   cout << "===== Ende der Addressen =====" << endl;
-  cout << "Adressen insgesamt: \t " << count;
+  cout << "Adressen insgesamt: " << count << endl;
 }
 
 void DeleteAdress()
 {
   char lastname[50 + 1] = {}; 
-  cout << "Geben sie den Nachnamen der Adresse ein die sie löschen möchten" << endl;
+  cout << "Geben sie den Nachnamen der Adresse ein die sie löschen möchten: ";
   cin >> lastname;
 
   for(int i = 0; i < addressArraySize; i++)
@@ -99,8 +105,8 @@ void DeleteAdress()
       if((i + 1) > addressArraySize)
       {
         pArrayAddress[i - 1].nextAddress = NULL;
-      }     
-      delete &pArrayAddress[i];
+      }
+      delete [i] pArrayAddress;
     }
   }
 }
@@ -116,14 +122,17 @@ int main() {
 
   char decision;
   int choice;
+  SetConsoleOutputCP(CP_UTF8);
+  SetConsoleCP(CP_UTF8);
+
 
   do
   {
     system("cls");
-
-    cout << "=========Adressen Liste========\n" << endl;
+    
+    cout << "========= Adressen Liste ========\n" << endl;
     cout << "1) Einlesen von Adressen\n2) Ausgabe der Adressen\n3) Löschen einer Adresse\n4) Ändern einer Adresse" << endl;
-    cout << "Auswahl: \t";
+    cout << "Auswahl: ";
     cin >> choice;
 
     switch(choice)

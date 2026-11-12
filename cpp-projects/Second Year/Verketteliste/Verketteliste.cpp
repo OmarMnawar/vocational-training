@@ -5,12 +5,12 @@ using namespace std;
 
 
 struct Address {
-    char street[50 + 1];
-    char housenr[5 + 1];
+    char street[50 + 1] = {};
+    char housenr[5 + 1] = {};
     int postcode = 0;
-    char city[60 + 1];
-    char country[25 + 1];
-    char lastname[50 + 1];
+    char city[60 + 1] = {};
+    char country[25 + 1] = {};
+    char lastname[50 + 1] = {};
     Address* lastAddress = nullptr;
     Address* nextAddress = nullptr;
 };

@@ -19,10 +19,10 @@ struct Address {
 Address* pHeadAddress = nullptr;
 int addressCount = 0;
 
-void WriteAddresse();
-void ReadAddresse();
-void DeleteAdress();
-void ChangeAdress();
+void WriteAddress();
+void ReadAddress();
+void DeleteAddress();
+void ChangeAddress();
 
 int main() {
     SetConsoleOutputCP(CP_UTF8);
@@ -42,19 +42,19 @@ int main() {
         switch (choice)
         {
         case 1:
-            WriteAddresse();
+            WriteAddress();
             break;
 
         case 2:
-            ReadAddresse();
+            ReadAddress();
             break;
 
         case 3:
-            DeleteAdress();
+            DeleteAddress();
             break;
 
         case 4:
-            ChangeAdress();
+            ChangeAddress();
             break;
 
         default:
@@ -68,7 +68,7 @@ int main() {
 
     return 0;
 }
-void WriteAddresse() {
+void WriteAddress() {
 
     char answer = 'j';
     int layedAdresses = 0;
@@ -116,7 +116,7 @@ void WriteAddresse() {
 }
 
 
-void ReadAddresse() {
+void ReadAddress() {
 
     if (pHeadAddress != nullptr)
     {
@@ -143,7 +143,7 @@ void ReadAddresse() {
     cout << "Adressen insgesamt: " << addressCount << endl;
 }
 
-void DeleteAdress()
+void DeleteAddress()
 {
     Address* current = pHeadAddress;
 
@@ -178,7 +178,7 @@ void DeleteAdress()
     }
     cout << "Keine Adresse mit dem Nachnamen gefunden." << endl;
 }
-void ChangeAdress()
+void ChangeAddress()
 {
     Address* current = pHeadAddress;
     char lastname[50 + 1] = {};

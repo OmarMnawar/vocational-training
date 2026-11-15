@@ -1,8 +1,12 @@
+/* ==== Omar Mnawar und Kimmo Schumacher ============== */
+/* ==== Verketteliste ================================= */
+/* ==== Datum 10.11.2026 - 13.11.2026 ================================= */
+
 #include <iostream>
 // OM: Wenn du auf Windows bist, kannst du die wieder benutzten.
 //#include <Windows.h>
 // OM: Wenn du auf Windows bist, konntest du sie wahrscheinlich entfernen.
-#include <cstring> 
+#include <cstring>
 
 using namespace std;
 

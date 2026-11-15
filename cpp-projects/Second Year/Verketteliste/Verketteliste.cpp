@@ -1,5 +1,8 @@
 #include <iostream>
-#include <Windows.h>
+// OM: Wenn du auf Windows bist, kannst du die wieder benutzten.
+//#include <Windows.h>
+// OM: Wenn du auf Windows bist, konntest du sie wahrscheinlich entfernen.
+#include <cstring> 
 
 using namespace std;
 
@@ -25,8 +28,9 @@ void DeleteAddress();
 void ChangeAddress();
 
 int main() {
-    SetConsoleOutputCP(CP_UTF8);
-    SetConsoleCP(CP_UTF8);
+    // OM: Wenn du auf Windows bist, kannst du die wieder benutzten.
+    //SetConsoleOutputCP(CP_UTF8);
+    //SetConsoleCP(CP_UTF8);
     char decision;
     int choice;
 

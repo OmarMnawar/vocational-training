@@ -7,7 +7,7 @@
         {
             "type": "cmake",
             "request": "launch",
-            "name": "CMake: Configure project",
+            "name": "Cpp-Project",
             "cmakeDebugType": "configure",
             "clean": true,
             "configureAll": false

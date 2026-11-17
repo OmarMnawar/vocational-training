@@ -98,4 +98,9 @@ add_executable(ZweiteKlausur_QuersummeRekursionLoesung
 add_executable(Zeiger "First Year/Zeiger Und DynamischeArrays/Zeiger.cpp")
 add_executable(DynamischeArray "First Year/Zeiger Und DynamischeArrays/DynamischeArray.cpp")
 
+# Project 27 Verkettelist mit Kimmo Schumacher (Gruppenarbeit)
 add_executable(Verketteliste "Second Year/Verketteliste/Verketteliste.cpp")
+
+# Project 28 Liste vs Vectos
+add_executable(test_list "Second Year/VectorUndList/Tests/test_list.cpp")
+add_executable(test_vector "Second Year/VectorUndList/Tests/test_vector.cpp")
